@@ -1,42 +1,47 @@
-🤖 AI Customer Support Bot
+# 🤖 AI Customer Support Bot
 
-NLP-Based Customer Query Classification & Automated Response System
+### NLP-Based Customer Query Classification & Automated Response System
 
-An NLP-based AI Customer Support Bot that automatically classifies
-customer queries into predefined support intents using TF-IDF and
-Logistic Regression, and provides relevant responses through a
-FastAPI backend and interactive web interface.
 
-🚀 Live Demo
 
-🔗 Live Demo: https://customer-support-bot-k5ma.onrender.com
 
-Deployed using Render with a FastAPI backend.
 
-💻 Source Code
 
-🔗 GitHub Repository:
+> An NLP-based AI Customer Support Bot that automatically classifies customer queries into predefined support intents using **TF-IDF and Logistic Regression**, and provides relevant responses through a **FastAPI backend and interactive web interface**.
+
+---
+
+## 🚀 Live Demo
+
+🔗 **Live Demo:** [AI Customer Support Bot](https://customer-support-bot-k5ma.onrender.com)
+
+
+> Deployed using Render with a FastAPI backend.
+
+---
+
+## 💻 Source Code
+
+🔗 **GitHub Repository:**
 https://github.com/Bhuvanabodapati/Customer-support-bot
 
-📌 Project Overview
+---
 
-Customer support systems receive a large number of repetitive queries
-related to orders, payments, refunds, deliveries, account issues, and
-cancellations.
+## 📌 Project Overview
 
-The AI Customer Support Bot uses Natural Language Processing
-(NLP) and Machine Learning to identify the intent behind a
-customer's question and provide an appropriate automated response.
+Customer support systems receive a large number of repetitive queries related to orders, payments, refunds, deliveries, account issues, and cancellations.
 
-The system converts text into numerical features using TF-IDF,
-predicts the customer's intent using a Logistic Regression
-classifier, and maps the predicted intent to an FAQ response.
+The **AI Customer Support Bot** uses **Natural Language Processing (NLP)** and **Machine Learning** to understand the intent behind a customer's question and provide an appropriate automated response.
 
-A confidence-based fallback mechanism is also implemented to handle
-queries that the model cannot classify with sufficient confidence.
+The system accepts a customer's message, converts the text into numerical features using **TF-IDF**, and uses a **Logistic Regression classifier** to predict the customer's intent.
 
-🔄 Workflow
+The predicted intent is then mapped to an appropriate FAQ response. A confidence-based fallback mechanism is also implemented to handle queries that the model cannot classify with sufficient confidence.
 
+The application is integrated with a **FastAPI backend** and a simple **HTML/CSS/JavaScript frontend**, creating an end-to-end Machine Learning application.
+
+### Workflow
+
+```text
 Customer Query
       ↓
 Text Input
@@ -52,187 +57,240 @@ Confidence Check
 FAQ Response / Fallback Response
       ↓
 Web Interface
+```
 
-🎯 Problem Statement
+---
 
-Traditional customer support systems often require human agents to
-handle repetitive queries such as:
+## 🎯 Problem Statement
 
-Where is my order?
+Traditional customer support systems often require human agents to handle repetitive queries such as:
 
-Can I cancel my order?
+* Where is my order?
+* Can I cancel my order?
+* How can I get a refund?
+* Why did my payment fail?
+* When will my order be delivered?
+* How can I contact customer support?
+* How can I manage my account?
 
-How can I get a refund?
+Handling a large number of similar queries manually can increase support workload and response time.
 
-Why did my payment fail?
+### Objective
 
-When will my order be delivered?
+The objective of this project is to develop a lightweight Machine Learning-based customer support chatbot that can:
 
-How can I contact customer support?
+* Understand common customer queries.
+* Identify the intent behind each query.
+* Classify queries into predefined support categories.
+* Provide automated responses.
+* Detect low-confidence or unsupported queries.
+* Integrate a Machine Learning model with a REST API.
+* Provide an interactive web-based chatbot interface.
 
-How can I manage my account?
+---
 
-Handling a large number of similar queries manually can increase support
-workload and response time.
+# ✨ Key Features
 
-Objective
+### 🤖 1. Intent Classification
 
-The objective of this project is to develop a lightweight Machine
-Learning-based customer support chatbot that can:
+The chatbot classifies customer queries into **7 predefined support intents**:
 
-Understand common customer queries.
+| Intent            | Description                       |
+| ----------------- | --------------------------------- |
+| `account`         | Account-related queries           |
+| `cancellation`    | Order cancellation requests       |
+| `contact_support` | Customer support contact requests |
+| `delivery`        | Delivery and shipping queries     |
+| `order_status`    | Order tracking and status queries |
+| `payment`         | Payment-related issues            |
+| `refund`          | Refund-related queries            |
 
-Identify the intent behind each query.
+---
 
-Classify queries into predefined support categories.
+### 🧠 2. NLP-Based Text Processing
 
-Provide automated responses.
+Customer questions are converted into numerical features using **TF-IDF (Term Frequency-Inverse Document Frequency)**.
 
-Detect low-confidence or unsupported queries.
+The model uses:
 
-Integrate a Machine Learning model with a REST API.
+```text
+Unigrams + Bigrams
+```
 
-Provide an interactive web-based chatbot interface.
+Configuration:
 
-✨ Key Features
-
-🤖 1. Intent Classification
-
-The chatbot classifies customer queries into 7 predefined support
-intents:
-
-Intent              Description
-
-account           Account-related queries
-cancellation      Order cancellation requests
-contact_support   Customer support contact requests
-delivery          Delivery and shipping queries
-order_status      Order tracking and status queries
-payment           Payment-related issues
-refund            Refund-related queries
-
-🧠 2. NLP-Based Text Processing
-
-Customer questions are converted into numerical features using TF-IDF
-(Term Frequency-Inverse Document Frequency).
-
-The model uses unigrams and bigrams:
-
+```python
 TfidfVectorizer(
     lowercase=True,
     ngram_range=(1, 2)
 )
+```
 
-This allows the model to learn individual words and short phrases such
-as:
+This allows the model to learn both individual words and short phrases.
 
+Examples:
+
+```text
 "track order"
 "cancel order"
 "payment failed"
 "refund money"
+```
 
-📊 3. Machine Learning Classification
+---
 
-The project uses Logistic Regression for intent classification.
+### 📊 3. Machine Learning Classification
 
+The project uses **Logistic Regression** for intent classification.
+
+```text
+Customer Query
+      ↓
+TF-IDF
+      ↓
+Logistic Regression
+      ↓
+Predicted Intent
+```
+
+The classifier is configured with:
+
+```python
 LogisticRegression(
     max_iter=1000
 )
+```
 
-Logistic Regression was selected because it is efficient for text
-classification, fast to train, suitable for small and medium-sized
-datasets, simple to implement, and capable of generating class
-probabilities for confidence-based prediction.
+---
 
-🎯 4. Confidence-Based Fallback
+### 🎯 4. Confidence-Based Fallback
 
 The chatbot uses a confidence threshold of:
 
+```text
 0.45
+```
 
-If the model's confidence is below this threshold, the chatbot returns:
+If the model's confidence is below this threshold, the chatbot does not return an uncertain intent.
 
-Sorry, I couldn't understand your request. Could you please rephrase
-your question?
+Instead, it responds:
+
+> Sorry, I couldn't understand your request. Could you please rephrase your question?
 
 This helps prevent unrelated responses for unsupported queries.
 
-⚡ 5. FastAPI Backend
+---
+
+### ⚡ 5. FastAPI Backend
 
 The trained Machine Learning model is integrated with a FastAPI backend.
 
 Main endpoint:
 
+```text
 POST /chat
+```
 
 Example request:
 
+```json
 {
-  "message": "Where is my order?"
+    "message": "Where is my order?"
 }
+```
 
 Example response:
 
+```json
 {
-  "intent": "order_status",
-  "response": "You can check your order status using your order ID.",
-  "confidence": 0.49
+    "intent": "order_status",
+    "response": "You can track your order using the tracking link provided in your order details.",
+    "confidence": 0.91
 }
+```
 
-💻 6. Interactive Web Interface
+---
 
-The frontend is developed using:
+### 💻 6. Interactive Web Interface
 
-HTML
+A simple chatbot interface was developed using:
 
-CSS
+* HTML
+* CSS
+* JavaScript
 
-JavaScript
+Users can enter their questions and receive responses from the Machine Learning model in real time.
 
-Users can enter questions and receive responses from the Machine
-Learning model in real time.
+---
 
-🧠 Machine Learning Approach
+# 🧠 Machine Learning Approach
 
-1. Dataset Preparation
+## 1. Dataset Preparation
 
-A custom FAQ dataset was created containing customer questions,
-responses, and their corresponding intents.
+A custom FAQ dataset was created containing customer questions and their corresponding intents.
 
-Dataset Property                Value
+### Dataset
 
-Training Examples             130
-Supported Intents               7
-Independent Test Examples      35
-Test Examples per Intent        5
+| Dataset Property          |   Value |
+| ------------------------- | ------: |
+| Training Examples         | **120** |
+| Supported Intents         |   **7** |
+| Independent Test Examples |  **35** |
+| Test Examples per Intent  |   **5** |
 
-The dataset was improved iteratively by adding representative examples,
-especially for closely related categories such as Payment, Refund, and
-Order Status.
+The dataset was improved iteratively by adding representative examples, especially for closely related categories such as:
 
-2. TF-IDF Vectorization
+```text
+Payment
+Refund
+Order Status
+```
 
-The first stage converts text into numerical features using TF-IDF.
+This helped reduce confusion between semantically similar customer queries.
 
+---
+
+## 2. TF-IDF Vectorization
+
+The first stage of the Machine Learning pipeline converts text into numerical features using **TF-IDF**.
+
+```python
 TfidfVectorizer(
     lowercase=True,
     ngram_range=(1, 2)
 )
+```
 
-TF-IDF gives greater importance to words and phrases that help
-distinguish between different intents.
+TF-IDF gives greater importance to words and phrases that help distinguish between different intents.
 
-3. Logistic Regression
+---
 
-After vectorization, the TF-IDF features are passed to a Logistic
-Regression classifier.
+## 3. Logistic Regression
 
+After vectorization, the TF-IDF features are passed to a **Logistic Regression classifier**.
+
+```python
 LogisticRegression(
     max_iter=1000
 )
+```
 
-4. Model Pipeline
+Logistic Regression was selected because it is:
 
+* Efficient for text classification.
+* Fast to train.
+* Suitable for small and medium-sized datasets.
+* Simple to implement.
+* Capable of generating class probabilities.
+* Suitable for confidence-based prediction.
+
+---
+
+## 4. Model Pipeline
+
+The complete Machine Learning pipeline is:
+
+```text
 FAQ Dataset
      ↓
 Text Questions
@@ -246,206 +304,130 @@ Intent Prediction
 Confidence Score
      ↓
 FAQ Response
+```
 
-📊 Model Performance
+---
 
-The final model was evaluated using an independent test dataset
-containing 35 unseen customer queries.
+# 📊 Model Performance
 
-Final Model
+The final model was evaluated using an **independent test dataset containing 35 unseen customer queries**.
 
-Algorithm: Logistic Regression
+### Final Model
 
-Feature Extraction: TF-IDF
+**Algorithm:** Logistic Regression
+**Feature Extraction:** TF-IDF
+**N-gram Range:** `(1, 2)`
+**Confidence Threshold:** `0.45`
 
-N-gram Range: (1, 2)
+### Overall Performance
 
-Confidence Threshold: 0.45
+| Metric                    |      Score |
+| ------------------------- | ---------: |
+| Training Examples         |    **120** |
+| Supported Intents         |      **7** |
+| Independent Test Examples |     **35** |
+| Correct Predictions       |     **34** |
+| Incorrect Predictions     |      **1** |
+| Accuracy                  | **97.14%** |
+| Macro Precision           |   **0.98** |
+| Macro Recall              |   **0.97** |
+| Macro F1-Score            |   **0.97** |
 
-Overall Performance
+> The independent test dataset contains 5 examples per intent. These results represent performance on this evaluation dataset and should not be interpreted as guaranteed real-world accuracy.
 
-Metric                             Score
+---
 
-Training Examples                130
-Supported Intents                  7
-Independent Test Examples         35
-Correct Predictions               34
-Incorrect Predictions              1
-Accuracy                      97.14%
-Macro Precision                 0.98
-Macro Recall                    0.97
-Macro F1-Score                  0.97
+## 📈 Intent-Wise Performance
 
-The independent test dataset contains 5 examples per intent. These
-results represent performance on this evaluation dataset and should
-not be interpreted as guaranteed real-world accuracy.
+| Intent            | Precision |  Recall  | F1-Score | Support |
+| ----------------- | :-------: | :------: | :------: | :-----: |
+| Account           |    1.00   |   1.00   |   1.00   |    5    |
+| Cancellation      |    1.00   |   1.00   |   1.00   |    5    |
+| Contact Support   |    1.00   |   1.00   |   1.00   |    5    |
+| Delivery          |    1.00   |   1.00   |   1.00   |    5    |
+| Order Status      |    1.00   |   1.00   |   1.00   |    5    |
+| Payment           |    0.83   |   1.00   |   0.91   |    5    |
+| Refund            |    1.00   |   0.80   |   0.89   |    5    |
+| **Macro Average** |  **0.98** | **0.97** | **0.97** |  **35** |
 
-📈 Intent-Wise Performance
+---
 
-Intent               Precision    Recall    F1-Score   Support
+## 🔲 Confusion Matrix
 
-Account                1.00        1.00       1.00        5
-Cancellation           1.00        1.00       1.00        5
-Contact Support        1.00        1.00       1.00        5
-Delivery               1.00        1.00       1.00        5
-Order Status           1.00        1.00       1.00        5
-Payment                0.83        1.00       0.91        5
-Refund                 1.00        0.80       0.89        5
-Macro Average    0.98    0.97   0.97   35
+The confusion matrix below represents the predictions made on the **35 independent test queries**.
 
-🔲 Confusion Matrix
+```text
+                    Predicted
 
-The confusion matrix below represents predictions made on the 35
+              Account  Cancel  Contact  Delivery  Order  Payment  Refund
+
+Account          5       0       0        0        0       0       0
+
+Cancellation     0       5       0        0        0       0       0
+
+Contact Support  0       0       5        0        0       0       0
+
+Delivery         0       0       0        5        0       0       0
+
+Order Status     0       0       0        0        5       0       0
+
+Payment          0       0       0        0        0       5       0
+
+Refund           0       0       0        0        0       1       4
+```
+
+### Class Order
+
+```text
+account
+cancellation
+contact_support
+delivery
+order_status
+payment
+refund
+```
+
+### Error Analysis
+
+The model correctly classified:
+
+```text
+34 / 35
+```
+
 independent test queries.
-
-                  Predicted
-              Account Cancel Contact Delivery Order Payment Refund
-
-Account          5       0      0       0       0      0      0
-Cancellation     0       5      0       0       0      0      0
-Contact Support  0       0      5       0       0      0      0
-Delivery         0       0      0       5       0      0      0
-Order Status     0       0      0       0       5      0      0
-Payment          0       0      0       0       0      5      0
-Refund           0       0      0       0       0      1      4
-
-Error Analysis
-
-The model correctly classified 34 / 35 independent test queries.
 
 The only misclassification was:
 
+```text
 Actual:    Refund
 Predicted: Payment
+```
 
-The error occurred between the refund and payment categories,
-which contain some semantically related terminology.
+The confusion occurred between the **refund** and **payment** categories, which contain some semantically related terminology.
 
-🛠️ Technologies Used
+---
 
-Python
+# 📸 Application Preview
 
-Pandas
+The application provides a simple web-based chatbot interface where users can enter customer-support questions and receive automated responses.
 
-Scikit-learn
-
-Joblib
-
-FastAPI
-
-Uvicorn
-
-HTML
-
-CSS
-
-JavaScript
-
-Render
-
-📁 Project Structure
-
-Customer-support-bot/
-│
-├── backend/
-│   ├── chatbot.py
-│   └── main.py
-│
-├── data/
-│   ├── faq.csv
-│   └── test_faq.csv
-│
-├── frontend/
-│   └── index.html
-│
-├── model/
-│   ├── train_model.py
-│   └── customer_support_model.pkl
-│
-├── screenshots/
-│   ├── chatbot-home.png
-│   ├── chatbot-order-status.png
-│   ├── chatbot-refund.png
-│   └── chatbot-unknown-query.png
-│
-├── tests/
-├── .gitignore
-├── README.md
-└── requirements.txt
-
-⚙️ Installation
-
-Clone the repository:
-
-git clone https://github.com/Bhuvanabodapati/Customer-support-bot.git
-cd Customer-support-bot
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-▶️ Run Locally
-
-Start the FastAPI application:
-
-uvicorn backend.main:app --reload
-
-Open:
-
-http://127.0.0.1:8000
-
-FastAPI documentation:
-
-http://127.0.0.1:8000/docs
-
-🌐 Deployment
-
-The application is deployed using Render.
-
-Build Command:
-pip install -r requirements.txt
-
-Start Command:
-uvicorn backend.main:app --host 0.0.0.0 --port $PORT
-
-📸 Application Preview
-
-Chatbot Interface
+### Chatbot Interface
 
 
+![AI Customer Support Bot](screenshots/chatbot-home.png)
 
-Order Status Query
+### Order Status Query
 
+![Order Status Query](screenshots/chatbot-order-status.png)
 
+### Refund Query
 
-Refund Query
+![Refund Query](screenshots/chatbot-refund.png)
 
+### Unknown Query Handling
 
+![Unknown Query](screenshots/chatbot-unknown-query.png)
 
-Unknown Query Handling
-
-
-
-🔮 Future Enhancements
-
-Add more customer support intents.
-
-Expand the training dataset with more natural-language variations.
-
-Add conversation history.
-
-Add authentication and user sessions.
-
-Integrate a database for real order-status lookup.
-
-Add multilingual customer support.
-
-Add a human-agent escalation workflow.
-
-Improve intent classification with advanced NLP models.
-
-👩‍💻 Author
-
-Bhuvana Bodapati
-
-GitHub: https://github.com/Bhuvanabodapati
+---
