@@ -1,0 +1,42 @@
+question,intent
+"Where can I see my order tracking?","order_status"
+"Can you tell me the current location of my package?","order_status"
+"Has my package left the warehouse?","order_status"
+"I want to check my shipment status","order_status"
+"Is there an update on my order?","order_status"
+
+"How many days until my package arrives?","delivery"
+"What is the expected arrival date?","delivery"
+"When should my delivery reach me?","delivery"
+"How soon can I expect the package?","delivery"
+"What is the usual shipping duration?","delivery"
+
+"I don't want this order anymore","cancellation"
+"Can I stop my purchase?","cancellation"
+"Please stop the order I placed","cancellation"
+"Is there a way to cancel my purchase?","cancellation"
+"I need to cancel an order","cancellation"
+
+"I would like my payment refunded","refund"
+"Can you return the money I paid?","refund"
+"I want to receive my money back for this order","refund"
+"How do I claim my money back?","refund"
+"Can I get my purchase refunded?","refund"
+
+"My card transaction did not work","payment"
+"Why was my card payment unsuccessful?","payment"
+"I am having trouble paying","payment"
+"My transaction was declined","payment"
+"I cannot pay for my order","payment"
+
+"I cannot remember my login password","account"
+"I am having trouble signing into my account","account"
+"How can I regain access to my account?","account"
+"I need to update my login password","account"
+"My login credentials are not working","account"
+
+"I need to speak with customer service","contact_support"
+"Can someone from support help me?","contact_support"
+"How do I reach a customer care representative?","contact_support"
+"I need assistance from an agent","contact_support"
+"Please let me speak with a human agent","contact_support"
