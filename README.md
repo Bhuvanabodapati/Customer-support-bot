@@ -2,11 +2,10 @@
 
 ### NLP-Based Customer Query Classification & Automated Response System
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://www.python.org/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange?logo=scikit-learn)](https://scikit-learn.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
-[![HTML](https://img.shields.io/badge/HTML-Frontend-E34F26?logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+
+
+\
 
 > An NLP-based AI Customer Support Bot that automatically classifies customer queries into predefined support intents using **TF-IDF and Logistic Regression**, and provides relevant responses through a **FastAPI backend and interactive web interface**.
 
@@ -14,7 +13,8 @@
 
 ## 🚀 Live Demo
 
-🔗 **Live Demo:** Coming Soon
+🔗 **Live Demo:** [AI Customer Support Bot](https://customer-support-bot-k5ma.onrender.com)
+
 
 > The application currently runs locally using FastAPI. A public deployment will be added in a future version.
 
@@ -406,5 +406,43 @@ Predicted: Payment
 ```
 
 The confusion occurred between the **refund** and **payment** categories, which contain some semantically related terminology.
+
+---
+
+# 📸 Application Preview
+
+The application provides a simple web-based chatbot interface where users can enter customer-support questions and receive automated responses.
+
+### Chatbot Interface
+
+Add your screenshot to:
+
+```text
+screenshots/chatbot-home.png
+```
+
+Then use:
+
+```markdown
+![AI Customer Support Bot](screenshots/chatbot-home.png)
+```
+
+### Order Status Query
+
+```markdown
+![Order Status Query](screenshots/chatbot-order-status.png)
+```
+
+### Refund Query
+
+```markdown
+![Refund Query](screenshots/chatbot-refund.png)
+```
+
+### Unknown Query Handling
+
+```markdown
+![Unknown Query](screenshots/chatbot-unknown-query.png)
+```
 
 ---
