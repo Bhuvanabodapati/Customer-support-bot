@@ -46,6 +46,11 @@
 "Cancel my purchase","Please provide your order ID to request cancellation.","cancellation"
 "I want to remove my order","Please provide your order ID so we can check whether cancellation is possible.","cancellation"
 "Can my order be cancelled?","We can check whether your order is eligible for cancellation.","cancellation"
+"I want to track my order","You can check your order status using your order ID.","order_status"
+"Can I track my package","You can check your order status using your order ID.","order_status"
+"Track my shipment","You can check your order status using your order ID.","order_status"
+"I need to know where my order is","You can check your order status using your order ID.","order_status"
+"How can I track my delivery","You can check your order status using your order ID.","order_status"
 
 "How can I get a refund?","Refunds can be requested for eligible orders through our support team.","refund"
 "I need my money back","Please provide your order ID so we can check your refund eligibility.","refund"
@@ -62,8 +67,11 @@
 "Is my order eligible for a refund?","Please provide your order ID so we can check your refund eligibility.","refund"
 "I want to request my refund","Please provide your order ID to start the refund process.","refund"
 "Where can I request a refund?","You can request a refund for an eligible order through support.","refund"
-
-
+"I want a refund","Please provide your order ID to request a refund.","refund"
+"Can I get a refund","Please provide your order ID to request a refund.","refund"
+"I need my money back","Please provide your order ID to request a refund.","refund"
+"How do I request a refund","Please provide your order ID to request a refund.","refund"
+"I want to get my money back","Please provide your order ID to request a refund.","refund"
 
 
 "My payment failed","Please check your payment details and try again. If the problem continues, contact support.","payment"
