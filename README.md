@@ -16,7 +16,7 @@
 🔗 **Live Demo:** [AI Customer Support Bot](https://customer-support-bot-k5ma.onrender.com)
 
 
-> The application currently runs locally using FastAPI. A public deployment will be added in a future version.
+> Deployed using Render with a FastAPI backend.
 
 ---
 
